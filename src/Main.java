@@ -4,7 +4,6 @@ import model.Prato;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import static java.lang.System.exit;
 import static java.util.Objects.nonNull;
@@ -13,14 +12,11 @@ public class Main {
 
     private static List<Caracteristica> caracteristicaMassaList = null;
     private static List<Caracteristica> caracteristicaList = null;
-    private static Scanner myObj = null;
-    private static String resposta = null;
     private static JFrame f;
 
     public static void main(String[] args) {
-        caracteristicaMassaList = new ArrayList<Caracteristica>();
-        caracteristicaList = new ArrayList<Caracteristica>();
-        myObj = new Scanner(System.in);  // Create a Scanner object
+        caracteristicaMassaList = new ArrayList<>();
+        caracteristicaList = new ArrayList<>();
 
         while (true) {
             message("Pense em um prato!");
@@ -81,8 +77,8 @@ public class Main {
     }
 
     private static void adicionaNovaCaracteristicaNovoPrato(Boolean massa) {
-        String prato = null;
-        String caracteristicaPrato = null;
+        String prato;
+        String caracteristicaPrato;
         String pratoDefault = (massa) ? "lasanha" : "Bolo de chocolate";
 
         prato = input("Qual prato você pensou?");
@@ -97,7 +93,6 @@ public class Main {
     }
 
     private static void adicionaNovoPrato(Boolean massa, Caracteristica caracteristicaRecebida, String pratoDefault) {
-
         String finalPrato = input("Qual prato você pensou?");
         String caracteristicaPrato = input(finalPrato + " é ___ mas " + pratoDefault + " não.");
 
@@ -109,7 +104,7 @@ public class Main {
     }
 
     private static void verificaPrato(Boolean massa) {
-        List<Caracteristica> caracteristicaVerificaList = new ArrayList<Caracteristica>();
+        List<Caracteristica> caracteristicaVerificaList = new ArrayList<>();
 
         if (massa) {
             caracteristicaVerificaList.addAll(caracteristicaMassaList);
