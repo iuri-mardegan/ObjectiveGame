@@ -14,21 +14,15 @@ public class Main {
         Pergunta inicial = new Pergunta("O prato que você pensou é massa?",
                 null,
                 new Pergunta("O prato que você pensou é lasanha?",
-                        "lasanha",
-                        null,
-                        null),
+                        "lasanha"),
                 new Pergunta("O prato que você pensou é Bolo de chocolate?",
-                        "Bolo de chocolate",
-                        null,
-                        null));
+                        "Bolo de chocolate"));
 
         while (true) {
             message("Pense em um prato!");
 
             realizaPergunta(inicial);
-
         }
-
     }
 
     private static void message(String conteudo) {
@@ -81,8 +75,7 @@ public class Main {
         p.setRespNao(new Pergunta(p.getPergunta(), p.getPrato()));
         p.setPrato(null);
         p.setPergunta("O prato que você pensou é " + caracteristicaPrato + "?");
-        p.setRespSim(new Pergunta("O prato que você pensou é " + prato + "?",
-                prato));
+        p.setRespSim(new Pergunta("O prato que você pensou é " + prato + "?", prato));
     }
 
 }
