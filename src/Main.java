@@ -11,16 +11,12 @@ public class Main {
     private static JFrame f;
 
     public static void main(String[] args) {
-        Pergunta inicial = new Pergunta("O prato que você pensou é massa?",
-                null,
-                new Pergunta("O prato que você pensou é lasanha?",
-                        "lasanha"),
-                new Pergunta("O prato que você pensou é Bolo de chocolate?",
-                        "Bolo de chocolate"));
+        Pergunta inicial = new Pergunta("O prato que você pensou é massa?", null,
+                new Pergunta("O prato que você pensou é lasanha?", "lasanha"),
+                new Pergunta("O prato que você pensou é Bolo de chocolate?", "Bolo de chocolate"));
 
         while (true) {
             message("Pense em um prato!");
-
             realizaPergunta(inicial);
         }
     }
