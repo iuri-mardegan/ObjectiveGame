@@ -76,15 +76,13 @@ public class Main {
 
     private static void addPergunta(Pergunta p) {
         String prato = input("Qual prato você pensou?");
-        String caracteristicaPrato = input(prato + " é ___ mas " + p.getPrato() + " não.");
+        String caracteristicaPrato = input(prato + " é ___, mas " + p.getPrato() + " não.");
 
-        p.setRespNao(new Pergunta(p.getPergunta(), p.getPrato(), null, null));
+        p.setRespNao(new Pergunta(p.getPergunta(), p.getPrato()));
         p.setPrato(null);
         p.setPergunta("O prato que você pensou é " + caracteristicaPrato + "?");
         p.setRespSim(new Pergunta("O prato que você pensou é " + prato + "?",
-                prato,
-                null,
-                null));
+                prato));
     }
 
 }

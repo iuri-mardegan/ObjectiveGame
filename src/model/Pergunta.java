@@ -44,4 +44,9 @@ public class Pergunta {
         this.respSim = respSim;
         this.respNao = respNao;
     }
+
+    public Pergunta(String pergunta, String prato) {
+        this.pergunta = pergunta;
+        this.prato = prato;
+    }
 }
