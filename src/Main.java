@@ -67,23 +67,24 @@ public class Main {
             }
         } else {
             if (isNull(p.getRespNao())) {
-                p.setRespNao(addPergunta(p));
+                addPergunta(p);
             } else {
                 realizaPergunta(p.getRespNao());
             }
         }
     }
 
-    private static Pergunta addPergunta(Pergunta p) {
+    private static void addPergunta(Pergunta p) {
         String prato = input("Qual prato você pensou?");
         String caracteristicaPrato = input(prato + " é ___ mas " + p.getPrato() + " não.");
-        return new Pergunta("O prato que você pensou é " + caracteristicaPrato + "?",
+
+        p.setRespNao(new Pergunta(p.getPergunta(), p.getPrato(), null, null));
+        p.setPrato(null);
+        p.setPergunta("O prato que você pensou é " + caracteristicaPrato + "?");
+        p.setRespSim(new Pergunta("O prato que você pensou é " + prato + "?",
+                prato,
                 null,
-                new Pergunta("O prato que você pensou é " + prato + "?",
-                        prato,
-                        null,
-                        null),
-                null);
+                null));
     }
 
 }
